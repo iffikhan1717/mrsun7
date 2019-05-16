@@ -1,0 +1,132 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <a class="navbar-brand" href="#">Mr Sun Electric Company</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'adsal' %}"><b>Sales</b></a>
+            </li>
+
+
+
+            {% if request.user.is_authenticated %}
+            <div class="dropdown">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    Shop
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'adpro' %}">Add Product</a>
+                    <a class="dropdown-item" href="{% url 'addpur' %}">Add Purchased Products</a>
+                    <a class="dropdown-item" href="{% url 'adcust' %}">Add Customers</a>
+
+                    <a class="dropdown-item" href="{% url 'adexp' %}">Add Expenses</a>
+                    <a class="dropdown-item" href="{% url 'addemp' %}">Add Employes</a>
+                    <a class="dropdown-item" href="{% url 'gvsal' %}">Pay Salary to Emp</a>
+                    <a class="dropdown-item" href="{% url 'saldetailsemp' %}">Salary Payments History</a>
+
+
+                </div>
+            </div>
+
+{#            <div class="dropdown">#}
+{#                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">#}
+{#                    Expenses#}
+{#                </button>#}
+{#                <div class="dropdown-menu">#}
+{##}
+{##}
+{#                    <a class="dropdown-item" href="{% url 'sser' %}">Shop Expense Report</a>#}
+{#                    <a class="dropdown-item" href="{% url 'addsd' %}">Personal Expense Report</a>#}
+{##}
+{##}
+{#                </div>#}
+{#            </div>#}
+
+
+            <div class="dropdown">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    Accounts
+                </button>
+                <div class="dropdown-menu">
+
+                    <a class="dropdown-item" href="{% url 'allacc' %}">All Accounts</a>
+                    <a class="dropdown-item" href="{% url 'transdebpage' %}">Update Mr Sun Debt</a>
+                    <a class="dropdown-item" href="{% url 'bakleg' %}">Mr Suns Debts Ledger</a>
+                    <a class="dropdown-item" href="{% url 'adamtpg' %}">Recieve Debt</a>
+                    <a class="dropdown-item" href="{% url 'leg' %}">Recieve Debt Ledger</a>
+                    <a class="dropdown-item" href="{% url 'adpycom' %}">Payments</a>
+                    <a class="dropdown-item" href="{% url 'paiddetail' %}">Payments Debt Ledger</a>
+
+
+                </div>
+            </div>
+
+                <div class="dropdown">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    Factory
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'adbk' %}">Add Booking</a>
+                    <a class="dropdown-item" href="{% url 'addprts' %}">add parts</a>
+                    <a class="dropdown-item" href="{% url 'addpani' %}">add Manifactured</a>
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="dropdown">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    Reports
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'alsr' %}">Products Report</a>
+                    <a class="dropdown-item" href="">Stock Entry Report</a>
+                    <a class="dropdown-item" href="{% url 'tdr' %}">Todays Sales Report</a>
+                    <a class="dropdown-item" href="{% url 'shopexpreport' %}">Todays Expense Report</a>
+                    <a class="dropdown-item" href="{% url 'shopexpreportall' %}">Over All Expenses Report</a>
+{#                    <a class="dropdown-item" href="">Todays Personal Expense Report</a>#}
+{#                    <a class="dropdown-item" href="">Personal Expense Report</a>#}
+                    <a class="dropdown-item" href="{% url 'als' %}">Find Sales Bill</a>
+                    <a class="dropdown-item" href="{% url 'sdb' %}">Find Debt Bill</a>
+                    <a class="dropdown-item" href="{% url 'spb' %}">Find Payment Bill</a>
+                    <a class="dropdown-item" href="{% url 'allpurbill' %}">Find Purchase Bill</a>
+
+{#                    <a class="dropdown-item" href="">Stock Exp list</a>#}
+{#                    <a class="dropdown-item" href="">Profit list</a>#}
+
+
+               </div>
+            </div>
+            {% else %}
+
+            <div class="dropdown">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    Factory
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'adbk' %}">Add Booking</a>
+                    <a class="dropdown-item" href="">Booking Details</a>
+
+
+
+                </div>
+            </div>
+            {% endif %}
+
+
+
+        </ul>
+    </div>
+</nav>
+
+

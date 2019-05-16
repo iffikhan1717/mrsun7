@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <img src="{% static 'images/bb.jpeg' %}" class="img-circle mx-auto d-block img-thumbnail" width="600" height="150"><p></p>
+        <h5 align="center">ALL-ABBAS ELECTRONIC Enterprise</h5>
+        <h5 align="center">Address: Soraj Ganj Bazar Opposite Shahbaz Light Civic Center Quetta</h5>
+
+    </div>
+</div>
+
+        <div class="container img-thumbnail border" >
+        <b>Sales Return Receipt for: {{ aa.customer_name }} </b>
+        <b> BILL NO: {{ aa.salesreturn_id }}</b><br>
+        <b>Order_Date: {{ aa.order_date }} </b>&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <table class="table table-bordered">
+    <thead>
+
+      <tr>
+        <th>Serial No</th>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for x in aa.salesreturndetail_set.all %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ x.product_name }}</td>
+        <td>{{ x.qty }}</td>
+        <td>{{x.price }}</td>
+        <td>{{ x.total }}</td>
+
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+<h5>SubTotal: {{ aa.sub_total }}</h5>
+
+    <h7>Discount: {{ aa.discount }}</h7>&nbsp;&nbsp;
+    <h7>NetTotal: {{ aa.net_total }}</h7>&nbsp;&nbsp;
+    <h7>Paid:     {{ aa.paid }}</h7>&nbsp;&nbsp;
+    <h7>Remaining:{{ aa.due }}</h7>&nbsp;&nbsp;
+    <h7>Payment Method:     {{ aa.payment_method }}</h7>&nbsp;&nbsp;
+
+</div>
+
+{% endblock  %}
+
+
+
+<hr>

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="row mx-auto">
+
+
+    <div class="col-md-12 border">
+    <img src="{% static 'images/new/mrsu.jpg' %}" class="rounded mx-auto d-block" style="height: 40px;"  >
+        <h3 style="
+        font-size: 44px;" align="center">Mr Sun Electric Company</h3>
+        <h6 align="center">Address: 6-B Qadri Center Drain Road Shah Alam Market Lahore</h6>
+        <h6 class="text-center">BABAK KHAN 0300-3839558 M AFZAL 0322-7948137 OFF 04237658137</h6>
+        <p></p>
+        <p><b>Customer Name: {{ aa.cust_name }}</b></p>
+        <p><b>City: {{ c.city}}</b></p>
+        <p align="right"><b> BILL NO: {{ aa.sales_id }}</b></p>
+        <p align="right"><b>Order_Date: {{ aa.dat }} </b></p>
+  <table class="table table-bordered text-center mx-auto" width="3" style="border-color: black">
+    <thead>
+
+      <tr>
+        <th> Serial</th>
+        <th> ECode</th>
+        <th> Product Name</th>
+
+        <th> Quantity</th>
+        <th> Price</th>
+        <th> Dis</th>
+        <th> Total</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for x in aa.salesdetails_set.all %}
+      <tr>
+
+        <td>{{ forloop.counter }}</td>
+        <td>{{ x.ecode }}</td>
+        <td>{{ x.pro_name }}</td>
+
+        <td>{{ x.qty }}</td>
+        <td>{{x.price }}</td>
+        <td>{{x.dis }}</td>
+        <td>{{ x.total }}</td>
+
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+
+<h6 align="right"><b>NetTotal: {{ aa.net_total }}</b><br>
+<b>Paid:{{ aa.paid }}</b><br>
+<b>Due:{{ aa.due}}</b><br>
+<b>Prev Bal: {{ cact.var }}</b><br>
+<b>Total Dr: {{ cact.debit }}</b></h6>&nbsp;&nbsp;
+
+</div>
+    <i>Prepared By Mohammad Irfan Email: iffi.cs777@gmail.com Cell: 03337881717</i>
+</div>
+{% endblock  %}
+
+

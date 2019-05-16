@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form id='bookingform' onsubmit="return false">
+        <h4 class="text-center">Add Booking</h4>
+        <table class="table-dark table-responsive-sm table-bordered mx-auto" align="center">
+            <thead>
+            <tr>
+                <th style="text-align:center;">Customer Name</th>
+                <th style="text-align:center;">Date</th>
+            </tr>
+            </thead>
+            <tbody id="upperstock">
+            <tr>
+                <td>
+
+                    <input type="text" name="cust" list="customers" class="form-control form-sm cst"/>
+                    <datalist id="customers">
+                        {% for c in all_com %}
+                            <option value="{{ c.cust_name }}">{{ c.cust_name }}</option>
+                        {% endfor %}
+                    </datalist>
+                </td>
+                <td><input name="dt" type="date" class="form-control form-control-sm bdate"></td>
+
+
+            </tr>
+            </tbody>
+        </table>
+        <br>
+
+
+        <table class="table-dark table-responsive-sm table-bordered mx-auto">
+            <thead>
+            <tr style="text-align:center; font-size: 25px;">
+                <th>#</th>
+                <th style="text-align:center;">Pro Name</th>
+                <th style="text-align:center;">Price</th>
+{#                <th style="text-align:center;">Discount</th>#}
+                <th style="text-align:center;">Qty</th>
+                <th style="text-align:center;">ECode</th>
+                <th style="text-align:center;">Dis</th>
+                <th style="text-align:center;">Total</th>
+
+
+            </tr>
+            </thead>
+            <tbody id="booking">
+            <tr></tr>
+            {% include 'booking/add_booking_row.html' with all_pus=all_pus %}
+
+
+            </tbody>
+
+        </table> <!--Table Ends-->
+        <center style="padding:10px;">
+            <button id="addbk" style="width:150px;" class="btn-group-sm btn-outline-info">Add</button>
+            <button id="remove" style="width:150px;" class="btn-group-sm btn-outline-info">Remove</button>
+            <button id="bookingdone" style="width:150px;" class="btn-group-sm btn-outline-info">Submit</button>
+        </center>
+
+    </form>
+
+
+
+
+
+{% endblock %}

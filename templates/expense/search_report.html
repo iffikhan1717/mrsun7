@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h3  align="center">Search Shop Expense Expenses </h3>
+    <form id='myamountform' onsubmit="return false">
+
+        <table class="table-responsive-sm table-bordered mx-auto">
+            <thead>
+            <tr>
+
+                <th style="text-align:center;">From Date</th>
+                <th style="text-align:center;">To Date</th>
+
+            </thead>
+            <tbody id="stock">
+            <tr>
+                <td><input name="dt" type="date" class="form-control form-control-sm"></td>
+                <td><input name="dt" type="date" class="form-control form-control-sm"></td>
+
+            </tr>
+
+
+            </tbody>
+
+        </table> <!--Table Ends-->
+        <center style="padding:10px;">
+
+            <button id="ser-report" style="width:150px;" class="btn btn-primary">Submit</button>
+        </center>
+    </form>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for cc in c %}
+    {{ cc.company_id }} ||
+{{ cc.company_name }} || {{ cc.company_address }} || {{ cc.company_cell }}<br>
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-12 mx-auto">
+        <h3 align="center">All Employees</h3>
+
+        <table class="table-responsive-sm table-bordered mx-auto">
+    <thead>
+
+      <tr>
+        <th>No</th>
+        <th style="text-align:center;">Employee Name</th>
+        <th style="text-align:center;">Employees job title</th>
+        <th style="text-align:center;">Salary</th>
+        <th style="text-align:center;">Credit</th>
+        <th style="text-align:center;">Debit</th>
+
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for ss in e %}
+      <tr>
+        <td class="text-center">{{ forloop.counter }}</td>
+        <td class="text-center">{{ ss.employees_name}}</td>
+        <td class="text-center">{{ ss.employees_job_title }}</td>
+        <td class="text-center">{{ ss.employees_salary }}</td>
+        <td class="text-center">{{ ss.emp_accounts_credit }}</td>
+        <td class="text-center">{{ ss.emp_accounts_debit }}</td>
+
+
+{#        <a href="/defaulters/{{ ss.accounts_name }}">  &nbsp;Click for Details</a>#}
+
+
+        </td>
+      </tr>
+        {% endfor %}
+
+    </tbody>
+  </table>
+    </div>
+    </div>
+

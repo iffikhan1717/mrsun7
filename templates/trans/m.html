@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="row">
+        <img src="{% static 'images/new/bb.jpg' %}" class="rounded"  ><p></p>
+
+    <div class="col-md-12 mx-auto">
+        <h6 align="center">ALL-ABBAS ELECTRONIC Enterprise</h6>
+        <h6 align="center">Address: Soraj Ganj Bazar Opposite Shahbaz Light Civic Center Quetta</h6>
+
+    </div>
+</div>
+<p></p>
+        <div class="container text-center">
+        <b>Payment Receipt for {{ tm.name }} Against Builty No: {{ tm.builtyno }} </b>
+        <b> Amount: {{ tm.amt }}</b><br>
+        <b>Receiving Date: {% now "d/m/Y" %} </b>&nbsp;&nbsp;&nbsp;
+
+{#  <table class="table  table-bordered text-center">#}
+{#    <thead>#}
+{##}
+{#      <tr style="font-size: 17px;">#}
+{#        <th >Customer Name:</th>#}
+{#        <th>Received Amount</th>#}
+{#        <th>Description</th>#}
+{#        <th>Date</th>#}
+{##}
+{#      </tr>#}
+{#    </thead>#}
+{#    <tbody>#}
+{##}
+{#      <tr style="font-size: 16px;">#}
+{##}
+{#        <td>{{ l.company_company }}</td>#}
+{#        <td>{{ l.amount }}</td>#}
+{#        <td>{{l.desc }}</td>#}
+{#        <td>{% now "d/m/Y" %}</td>#}
+{##}
+{##}
+{##}
+{#      </tr>#}
+{##}
+{#    </tbody>#}
+{#  </table>#}
+
+
+</div>
+
+{% endblock  %}
+
+

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-sm-12" align="center">
+            <h1>Stock Report</h1>
+
+
+
+            <table class="table-responsive-sm table-bordered">
+                <thead>
+
+                <tr>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Emp id:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Employee Name:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Employee Salary:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Amount Given</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Date</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for ss in s %}
+                    {#            {% for a in ss.salesdetails_set.all %}#}
+                    <tr>
+
+                        <td>{{ ss.st_id }}</td>
+                        <td>{{ ss.company_company }}</td>
+                        <td>{{ ss.date }}</td>
+                        <td>{{ ss.bill_no }}</td>
+                        <td>{{ ss.buity_no }}</td>
+                        <td>{{ ss.exp }}</td>
+                        <td>{{ ss.total_bill }}</td>
+                        <td>{{ ss.status }}</td>
+
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+
+    </div><p></p>
+
+
+{% endblock content %}

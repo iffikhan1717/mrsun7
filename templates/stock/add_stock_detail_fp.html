@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <form id='mystockform' onsubmit="return false">
+
+{#        <table class="table-responsive-sm table-bordered mx-auto" align="center">#}
+{#            <thead>#}
+{#            <tr>#}
+{#                <th style="text-align:center;">Company</th>#}
+{#                <th style="text-align:center;">Bill No</th>#}
+{#                <th style="text-align:center;">Builty No</th>#}
+{#                <th style="text-align:center;">Bill Expense</th>#}
+{#                <th style="text-align:center;">Bill Amount</th>#}
+{##}
+{#                <th style="text-align:center;">Date</th>#}
+{#                <th style="text-align:center;">Builty Sender</th>#}
+{##}
+{#            </tr>#}
+{#            </thead>#}
+{#            <tbody id="upperstock">#}
+{#            <tr>#}
+{#                <td>#}
+{##}
+{#                    <input type="text" name="com" list="company" class="form-control form-sm"/>#}
+{#                    <datalist id="company">#}
+{#                        {% for c in all_com %}#}
+{#                            <option value="{{ c.company_name }}">{{ c.company_name }}</option>#}
+{#                        {% endfor %}#}
+{#                    </datalist>#}
+{#                </td>#}
+{#                <td><input name="billno" type="text" class="form-control form-control-sm tqty"></td>#}
+{#                <td><input name="builtyno" type="text" class="form-control form-control-sm qty"></td>#}
+{#                <td><input name="expense" type="text" class="form-control form-control-sm qty"></td>#}
+{#                <td><input name="bamt" type="text" class="form-control form-control-sm"></td>#}
+{#                <td><input name="dt" type="date" class="form-control form-control-sm"></td>#}
+{#                <td>#}
+{##}
+{#                     <input type="hidden" name="sta"  list="status" value="Not Paid" readonly class="form-control form-sm"/>#}
+{##}
+{##}
+{##}
+{#                </td>#}
+{#            <td>#}
+{##}
+{#                     <input type="text" name="tn" list="tn" class="form-control form-sm"/>#}
+{#                    <datalist id="tn">#}
+{##}
+{#                            <option value="Noor Khan Mukadam">Noor Khan Mukadam</option>#}
+{#                            <option value="Haji Naseem Muqadim">Haji Naseem Muqadim</option>#}
+{##}
+{#                    </datalist>#}
+{##}
+{##}
+{#                </td>#}
+{##}
+{##}
+{#            </tr>#}
+{#            </tbody>#}
+{#        </table>#}
+{#        <br>#}
+
+
+        <table class="table-responsive-sm table-bordered mx-auto">
+            <thead>
+            <tr>
+                <th>#</th>
+
+                <th style="text-align:center;">Product</th>
+                <th style="text-align:center;">Purchase Price</th>
+                <th style="text-align:center;">Retail Price</th>
+                <th style="text-align:center;">Quantity</th>
+                <th style="text-align:center;">Unit</th>
+                <th style="text-align:center;">Unit Val</th>
+
+
+            </tr>
+            </thead>
+            <tbody id="stock">
+            <tr></tr>
+            {% include 'stock/add_stock_row.html' with com=all_com %}
+
+
+            </tbody>
+
+        </table> <!--Table Ends-->
+        <center style="padding:10px;">
+            <button id="addstock" style="width:150px;" class="btn btn-success">Add</button>
+            <button id="remove" style="width:150px;" class="btn btn-danger">Remove</button>
+            <button id="stockdone" style="width:150px;" class="btn btn-danger">Submit</button>
+        </center>
+
+    </form>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+{#  <div class="form-row">#}
+{#    <div class="form-group col-md-offset-2">#}
+{##}
+{#        <select class="custom-select">#}
+{#          <option selected> Company</option>#}
+{#          <option value="1">One</option>#}
+{#          <option value="2">Two</option>#}
+{#          <option value="3">Three</option>#}
+{#        </select>#}
+{#    </div>#}
+{#    <div class="form-group col-sm">#}
+{#      <input type="text" class="form-control"  placeholder="Bill No">#}
+{#    </div>#}
+{##}
+{##}
+{#  <div class="form-group col-sm">#}
+{##}
+{#    <input type="text" class="form-control"  placeholder="Builty No">#}
+{#  </div>#}
+{##}
+{#  <div class="form-group">#}
+{##}
+{#        <select class="custom-select">#}
+{#          <option selected> Products</option>#}
+{#          <option value="1">One</option>#}
+{#          <option value="2">Two</option>#}
+{#          <option value="3">Three</option>#}
+{#        </select>#}
+{#    </div>#}
+{##}
+{##}
+{##}
+{#    <div class="form-group col-sm">#}
+{##}
+{#    <input type="text" class="form-control"  placeholder="Purchase Price">#}
+{#  </div>#}
+{##}
+{##}
+{##}
+{#    <div class="form-group">#}
+{##}
+{#      <input type="text" class="form-control" placeholder="Retail Price">#}
+{#    </div>#}
+{##}
+{#      <div class="form-group col-sm">#}
+{##}
+{#      <input type="text" class="form-control" placeholder="Unit">#}
+{#    </div>#}
+{#  </div>#}
+{##}
+{#<div class="form-row">#}
+{##}
+{#    <div class="form-group col-sm-2">#}
+{##}
+{#      <input type="text" class="form-control" placeholder="Retail Price">#}
+{#    </div>#}
+{##}
+{##}
+{#</div>#}

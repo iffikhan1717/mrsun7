@@ -1,0 +1,27 @@
+<tr style="font-size: 20px;">
+    <td><b class="number">1</b></td>
+    <td>
+
+        <input size="12" style="font-size: 22px;" type="text" name="pro" list="ProductName"
+               class=" form-control form-control-sm pid"/>
+        <datalist id="ProductName">
+            {% for c in all_pus %}
+                <option value="{{ c.name }}">{{ c.name }}</option>
+            {% endfor %}
+        </datalist>
+
+    </td>
+
+    <td><input style="font-size: 22px;" size="2" name="tqty" readonly type="text"
+               class="form-control form-control-sm tqty"></td>
+    <td><input style="font-size: 22px;" size="2" name="price" type="text" class="form-control form-control-sm price">
+    </td>
+    <td><input style="font-size: 22px;" size="2" name="Ecode" type="text"
+               class="form-control form-control-sm ec"></td>
+    <td><input style="font-size: 22px;" size="2" name="qty" type="text" class="form-control form-control-sm qty"></td>
+    <td><input style="font-size: 22px;" size="2" name="dis" type="text" class="form-control form-control-sm diss"></td>
+
+
+
+    <td>Rs.<span size="2" class="amt">0</span></td>
+</tr>

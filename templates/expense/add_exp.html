@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="badge-success" align="center">Add Expenses </h1>
+    <form id='myamountform' onsubmit="return false">
+
+        <table class="table-responsive-sm table-bordered mx-auto">
+            <thead>
+            <tr>
+                <th style="text-align:center;">Desc</th>
+                <th style="text-align:center;">Amount</th>
+                <th style="text-align:center;">Given To</th>
+                <th style="text-align:center;">Date</th>
+
+            </thead>
+            <tbody id="stock">
+            <tr>
+                <td><input name="des" type="text" class="form-control form-control-sm"></td>
+                <td><input name="amount" type="text" class="form-control form-control-sm"></td>
+                <td><input name="gv" type="text" class="form-control form-control-sm"></td>
+                <td><input name="dt" type="date" class="form-control form-control-sm"></td>
+
+{#                <td>#}
+{##}
+{#                    <input type="text" name="dcom" list="accounts" class="form-control form-sm"/>#}
+{#                    <datalist id="accounts">#}
+{#                        <option value="Mr Sun">Mr Sun</option>#}
+
+{#                    </datalist>#}
+{#                </td>#}
+
+            </tr>
+
+
+            </tbody>
+
+        </table> <!--Table Ends-->
+        <center style="padding:10px;">
+
+            <button id="addexp" style="width:150px;" class="btn btn-primary">Submit</button>
+        </center>
+    </form>
+
+
+
+
+
+{% endblock %}

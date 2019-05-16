@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+<div class="row">
+<style>
+        .mm {
+            background-image: url("/static/images/aaa.jpg");
+            background-size: cover;
+
+
+        }
+        .mm h1,h2,h3 {
+            color: black;
+        }
+
+
+    </style>
+    <div class="col-md-4 mx-auto">
+        <h1>Add Expenses</h1>
+        <form method="post" class="mm">
+            {% csrf_token %}
+            {{ form|crispy }}
+        <input class="btn btn-primary"  type="submit" value="Add">
+        </form>
+
+
+
+
+</div>
+</div>
+
+
+{% endblock %}

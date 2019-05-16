@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h3 align="center">All Accounts</h3>
+            <h4 align="center">Your Debt on Customers: {{ dd }}</h4><h4 align="center">{{ df }} Customers are your Defaulters </h4>
+            <h4 align="center">Companies Dept on Me: {{ mydebit }}</h4><h4 align="center">Your are the Defaulter for: {{ total }} Companies</h4>
+
+        <h4 align="center">Cash In Hand: {{ cash.credit }}</h4>
+
+        <div class="row">
+        <div class="offset-3 col-md-4 col-md-offset-4">
+            <form action="" class="search-form">
+                <div class="form-group has-feedback">
+            		<label for="search" class="sr-only">Search</label>
+            		<input type="text" class="form-control" name="q" value="{{ request.get.q }}" id="search" placeholder="search">
+              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+            	</div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#            <div class="col-md-4 mx-auto">#}
+{#                <form  class=""  method="get" action="">#}
+{#                <input#}
+{#                        class="form-control mr-sm-2 text-center" align="center"#}
+{#                        type="search"#}
+{#                        placeholder="Search"#}
+{#                        aria-label="Search"#}
+{#                        name='q'#}
+{#                        value = "{{ request.get.q }}"#}
+{#                        >#}
+{#                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
+{#            </form>#}
+{#            </div>#}
+
+
+
+            <table class="table-responsive-sm table-bordered mx-auto">
+                <thead>
+
+                <tr>
+                    <th>A id</th>
+                    <th style="text-align:center;">Account Holder</th>
+                    <th style="text-align:center;">Op Date</th>
+                    <th style="text-align:center;">Credit</th>
+                    <th style="text-align:center;">Debit</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for ss in accs %}
+                    <tr>
+                        <td class="text-center">{{ forloop.counter }}</td>
+                        <td class="text-center">{{ ss.accounts_name }} <a href="/edit_acc/{{ ss.accounts_id }}">Edit</a>&nbsp;
+
+                        </td>
+                        <td class="text-center">{{ ss.opn_date }}</td>
+                        <td class="text-center">{{ ss.credit }}</td>
+                        <td class="text-center">{{ ss.debit }}
+                            {#        <a href="/defaulters/{{ ss.accounts_name }}">  &nbsp;Click for Details</a>#}
+
+
+                        </td>
+
+
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

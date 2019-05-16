@@ -1,0 +1,38 @@
+<p></p>
+<table class="table-responsive-sm table-bordered mx-auto" id="book-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Product Name</th>
+        <th>ECode</th>
+        <th>Qty</th>
+        <th>Dis</th>
+        <th>Total</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for c in allcom %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ c.company_name }}<a href="/company/{{ c.company_id }}"> Edit</a>
+        <a href="/company/{{ c.company_id }}/delete"> Delete</a>
+
+    </td>
+    <td>{{ c.company_address }}</td>
+    <td>{{ c.company_cell }}</td>
+
+
+
+  </tr>
+{% empty %}
+  <tr>
+    <td colspan="7" class="text-center bg-warning">No Company</td>
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+
+
+

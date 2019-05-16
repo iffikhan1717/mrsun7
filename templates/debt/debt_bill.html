@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row mx-auto">
+
+
+    <div class="col-md-12 border">
+        <img src="{% static 'images/new/mrsu.jpg' %}" class="rounded mx-auto d-block" style="height: 40px;"  >
+        <h3 style="
+        font-size: 44px;" align="center">Mr Sun Electric Company</h3>
+        <h6 align="center">Address: 6-B Qadri Center Drain Road Shah Alam Market Lahore</h6>
+        <h6 class="text-center">BABAK KHAN 0300-3839558 M AFZAL 0322-7948137 OFF 04237658137</h6>
+        <p></p>
+        <p><b>Customer Name: {{ l.customers_customers.cust_name }}</b></p>
+        <p><b>City: {{ cust.city}}</b></p>
+        <p align="right"><b> BILL NO: {{ l.deb_recv_ledger_id }}</b></p>
+        <p align="right"><b>Order_Date: {{ l.dat }} </b></p>
+  <table class="table table-bordered text-center mx-auto" width="3" style="border-color: black">
+    <thead>
+
+      <tr>
+        <th> Date</th>
+        <th> Amount</th>
+        <th> Description</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+
+
+        <td>{{ l.dat }}</td>
+        <td>{{ l.amount }}</td>
+
+        <td>{{ l.desc }}</td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+
+<h6 align="center">
+<b>Prev Bal: {{ ac.var }}</b><br>
+<b>Remaining Dr: {{ l.debit_amount }}</b></h6>&nbsp;&nbsp;
+
+</div>
+    <i>Prepared By Mohammad Irfan Email: iffi.cs777@gmail.com Cell: 03337881717</i>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#    <div class="row">#}
+{#        <img src="{% static 'images/new/bb.jpg' %}" class="rounded"  ><p></p>#}
+{##}
+{#    <div class="col-md-12 mx-auto">#}
+{#        <h6 align="center">ALL-ABBAS ELECTRONIC Enterprise</h6>#}
+{#        <h6 align="center">Address: Soraj Ganj Bazar Opposite Shahbaz Light Civic Center Quetta</h6>#}
+{##}
+{#    </div>#}
+{#</div>#}
+{##}
+{#        <div class="container text-center">#}
+{#        <b>Debt Receipt for Customer: {{ l.customers_customers.cust_name }} </b>#}
+{#        <b> BILL NO: {{ l.deb_recv_ledger_id }}</b><br>#}
+{#        <b>Receiving Date: {% now "d/m/Y" %} </b>&nbsp;&nbsp;&nbsp;#}
+{#            <b>Received By: {{ request.user }} </b>#}
+{##}
+{#  <table class="table  table-bordered text-center">#}
+{#    <thead>#}
+{##}
+{#      <tr style="font-size: 17px;">#}
+{#        <th >Customer Name:</th>#}
+{#        <th>Received Amount</th>#}
+{#        <th>Description</th>#}
+{#        <th>Date</th>#}
+{##}
+{#      </tr>#}
+{#    </thead>#}
+{#    <tbody>#}
+{##}
+{#      <tr style="font-size: 16px;">#}
+{##}
+{#        <td>{{ l.company_company }}</td>#}
+{#        <td>{{ l.amount }}</td>#}
+{#        <td>{{l.desc }}</td>#}
+{#        <td>{% now "d/m/Y" %}</td>#}
+{##}
+{##}
+{##}
+{#      </tr>#}
+{##}
+{#    </tbody>#}
+{#  </table>#}
+{#<h5><b>Remaining Debt: {{ ac.debit_amount}}</b></h5>#}
+{##}
+{#</div>#}
+
+{% endblock  %}
+
+

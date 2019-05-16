@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="row">
+
+    <div class="offset-2 col-md-8">
+        <h1>Add Parts</h1>
+        <form method="post" id="empform">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="btn btn-primary" id="combtn" type="submit" value="Add">
+        </form>
+
+
+        {% include 'parts/parts_list.html' with p=p %}
+
+
+</div>
+</div>
+
+
+{% endblock %}

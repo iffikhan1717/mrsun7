@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+    <div class="col-md-12 mx-auto">
+        <h2 align="center">Todays Expense Report</h2>
+        <table class="table-responsive-sm table-bordered" align="center">
+    <thead>
+
+      <tr>
+        <th style="text-align:center; color:white;" bgcolor="#8a2be2">Transaction ID: </th>
+        <th style="text-align:center; color:white;" bgcolor="#8a2be2">Transaction Description: </th>
+        <th style="text-align:center; color:white;" bgcolor="#8a2be2">Amount: </th>
+        <th style="text-align:center; color:white;" bgcolor="#8a2be2">Date: </th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for ss in s %}
+      <tr>
+
+        <td class="text-center">{{ ss.daily_id}}</td>
+        <td class="text-center">{{ ss.exp_desc }}</td>
+        <td>{{ ss.amount }}</td>
+        <td>{{ ss.dat }}</td>
+
+      </tr>
+        {% endfor %}
+
+    </tbody>
+
+  </table>
+    <h4 align="center">Total Expense: {{ nns }}</h4>
+    </div>
+    </div>
+
+
+{% endblock content %}

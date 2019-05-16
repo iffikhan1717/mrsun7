@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+<script type="text/javascript">
+
+    </script>
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12 mx-auto">
+            <h4 class="text-center">Add Customers</h4>
+            <form id='cstform' onsubmit="return false">
+
+                <table class="table-dark table-responsive-sm mx-auto text-center">
+                    <thead>
+                    <tr style="text-align:center; font-size: 25px;">
+
+                        {#Products_id, name, p_p, r_p, qty, e_code, dt, category_id#}
+                        <th style="text-align:center;">Name</th>
+                        <th style="text-align:center;">City</th>
+                        <th style="text-align:center;">Address</th>
+                        <th style="text-align:center;">Contact #</th>
+
+
+
+                    </tr>
+                    </thead>
+                    <p></p>
+                    <tbody id="stock">
+                    <tr>
+
+                        <td><input id="name" name="cname" type="text" class="form-control form-control-lg cust"></td>
+                        <td><input align="center" name="city" type="text" class="form-control form-control-lg city"></td>
+                        <td><input name="add" type="text" class="form-control form-control-lg add"></td>
+                        <td><input name="con" type="text" class="form-control form-control-lg con"></td>
+
+
+                    </tr>
+
+
+                    </tbody>
+
+                </table> <!--Table Ends-->
+                <center style="padding:10px;">
+                    <button id="adcst" style="width:100px;" class="btn-group-sm btn-outline-info">Add</button>
+
+                </center>
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-sm-12" align="center">
+            <h1>Details List of Defaulters</h1>
+
+            <table class="table-responsive-sm table-bordered">
+                <thead>
+
+                <tr>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Sale id:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Customer Name:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Order Date:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Product Name:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Qty</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Paid</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Due</th>
+
+
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for ss in s %}
+
+                    <tr>
+
+                        <td>{{ ss.sales_id }}</td>
+                        <td>{{ ss.customer_name }}</td>
+                        <td>{{ ss.order_date }}</td>
+                        <td>Rs: {{ ss.product_name }}</td>
+                        <td>Rs: {{ ss.qty }}</td>
+                        <td>Rs: {{ ss.paid }}</td>
+                        <td>Rs: {{ ss.due }}</td>
+
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+            <h4>Total Due: {{ sss }}</h4>
+
+
+        </div>
+
+
+    </div><p></p>
+
+
+{% endblock content %}

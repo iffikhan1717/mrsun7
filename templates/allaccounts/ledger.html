@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12 mx-auto">
+        <h3 align="center">Debt Recived</h3>
+        <table align="center" class="table-responsive-sm table-bordered mx-auto">
+    <thead>
+      <tr>
+        <th>Ser</th>
+
+        <th style="text-align:center;">Receiving Amount:</th>
+        <th style="text-align:center;">Remaining Debt:</th>
+                <th style="text-align:center;">Received From:</th>
+                <th style="text-align:center;">Method:</th>
+                <th style="text-align:center;">Description</th>
+                <th style="text-align:center;">Date</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for c in leg %}
+  <tr>
+    <td>{{ c.deb_recv_ledger_id }}</td>
+
+    <td>{{ c.amount}}</td>
+    <td>{{ c.debit_amount}}</td>
+      <td>{{ c.customers_customers.cust_name}}</td>
+      <td>{{ c.method}}</td>
+      <td>{{ c.desc }}</td>
+    <td>{{ c.dat }}</td>
+
+
+
+
+
+  </tr>
+{% empty %}
+  <tr>
+    <td colspan="7" class="text-center bg-warning">No Debt</td>
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+{#    <h5 align="center">Total Expense: {{ total }}</h5>#}
+    </div>
+</div>
+
+
+{% endblock content %}
+
+

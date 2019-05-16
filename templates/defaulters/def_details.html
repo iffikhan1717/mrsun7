@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="row">
+        <img src="{% static 'images/new/bb.jpg' %}" class="rounded"  ><p></p>
+
+    <div class="col-md-12 mx-auto">
+        <h6 align="center">ALL-ABBAS ELECTRONIC Enterprise</h6>
+        <h6 align="center">Address: Soraj Ganj Bazar Opposite Shahbaz Light Civic Plaza Quetta</h6>
+
+    </div>
+</div>
+
+        <div class="container">
+        <b>Sales Receipt for: {{ aa.customer_name }} </b>
+        <b> BILL NO: {{ aa.sales_id }}</b><br>
+        <b>Order_Date: {{ aa.order_date }} </b>&nbsp;&nbsp;&nbsp;
+
+  <table class="table table-bordered d-sm-table">
+    <thead>
+
+      <tr>
+        <th>No </th>
+        <th> Product Name</th>
+        <th> Quantity</th>
+        <th> Price</th>
+        <th> Total</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for x in aa.salesdetails_set.all %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ x.product_name }}</td>
+        <td>{{ x.qty }}</td>
+
+
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+&nbsp;&nbsp;
+    <h7>Paid:     {{ aa.paid }}</h7>&nbsp;&nbsp;
+    <h7>Remaining:{{ aa.due }}</h7>&nbsp;&nbsp;
+
+    <h5>Yours Old Dues: {{ cact.var }}</h5>
+    <h5><b>Yours New Total Debt: {{ cact.debit_amount }}</b></h5>&nbsp;&nbsp;
+
+</div>
+
+{% endblock  %}
+
+

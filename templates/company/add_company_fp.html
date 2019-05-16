@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="row">
+<style>
+        .mm {
+            background-image: url("/static/images/aaa.jpg");
+            background-size: cover;
+
+
+        }
+        .mm h1,h2,h3 {
+            color: black;
+        }
+
+
+    </style>
+    <div class="offset-2 col-md-8">
+        <h3>Add New Company</h3>
+        <form method="post" id="myform" class="">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+        </form>
+        <input class="btn btn-primary" id="combtn" type="submit" value="Add">
+
+{% include 'company/company_list.html' %}
+</div>
+</div>
+
+
+{% endblock %}

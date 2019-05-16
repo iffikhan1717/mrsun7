@@ -1,0 +1,67 @@
+<button onClick="scrollToBottom()">Scroll to Bottom</button>
+<table class="table-responsive-sm table-bordered mx-auto" id="book-table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Product Name</th>
+        <th>Purchase Price</th>
+        <th>Retail Price</th>
+        <th>Quantity</th>
+        <th class="text-center">Date</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for pro in allpro %}
+        <tr>
+
+            <td>{{ forloop.counter }}</td>
+            <td>{{ pro.products_name }} <a href="/products/{{ pro.products_id }}"> Edit</a>
+                <a href="/products/{{ pro.products_id }}/delete"> Delete</a>
+            </td>
+            <td>{{ pro.purchase_price }}</td>
+            <td>{{ pro.retail_price }}</td>
+            <td>{{ pro.products_stock }}</td>
+            <td>{{ pro.date }}</td>
+
+
+        </tr>
+    {% empty %}
+        <tr>
+            <td colspan="7" class="text-center bg-warning">No exp</td>
+        </tr>
+    {% endfor %}<br>
+    <p></p>
+
+
+
+    </tbody>
+</table><p></p>
+<script>
+    scrollingElement = (document.scrollingElement || document.body)
+function scrollToBottom () {
+   scrollingElement.scrollTop = scrollingElement.scrollHeight;
+}
+
+function scrollToTop (id) {
+   scrollingElement.scrollTop = 0;
+}
+
+//Require jQuery
+function scrollSmoothToBottom (id) {
+   $(scrollingElement).animate({
+      scrollTop: document.body.scrollHeight
+   }, 500);
+}
+
+//Require jQuery
+function scrollSmoothToTop (id) {
+   $(scrollingElement).animate({
+      scrollTop: 0
+   }, 500);
+}
+
+</script>
+
+
+

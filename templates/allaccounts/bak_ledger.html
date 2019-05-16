@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+
+        <h3 align="center">List of Debt on MR Sun</h3>
+        <table align="center" class="table-responsive-md table-bordered mx-auto">
+    <thead>
+      <tr>
+        <th style="text-align:center;">Ser</th>
+        <th style="text-align:center;">Company Name</th>
+                <th style="text-align:center;">Desc</th>
+                <th style="text-align:center;">RMB</th>
+                <th style="text-align:center;">Rupees</th>
+                <th style="text-align:center;">Amount</th>
+                <th style="text-align:center;">Date</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for c in leg %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ c.name }}</td>
+    <td>{{ c.desc }}</td>
+    <td>{{ c.rmb}}</td>
+    <td>{{ c.rup}}</td>
+    <td>{{ c.debit_amount}}</td>
+    <td>{{ c.dat}}</td>
+
+
+
+  </tr>
+{% empty %}
+  <tr>
+    <td colspan="7" class="text-center bg-warning">No Debt</td>
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+
+    </div>
+</div>
+
+
+{% endblock content %}
+
+

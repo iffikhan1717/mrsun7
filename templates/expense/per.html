@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h3 align="center">My Personal Expense Report</h3>
+        <table class="table-responsive-sm table-bordered" align="center">
+    <thead>
+      <tr>
+        <th>Ser</th>
+
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Given To</th>
+          <th>Date</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for c in leg %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ c.desc }}</td>
+    <td>{{ c.amount}}</td>
+    <td>{{ c.given_to }}</td>
+    <td>{{ c.dat}}</td>
+
+
+
+  </tr>
+{% empty %}
+  <tr>
+    <td colspan="7" class="text-center bg-warning">No Expense</td>
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+    <h5 align="center">Total Expense: {{ total }}</h5>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+

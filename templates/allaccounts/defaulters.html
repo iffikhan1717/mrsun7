@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <h1>List of All Defaulters</h1>
+
+            <table class="table" id="book-table">
+
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>sales_id</th>
+                    <th>customer_name</th>
+                    <th>order_date</th>
+                    <th>paid</th>
+                    <th>discount</th>
+                    <th>due</th>
+
+
+
+                </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>{{ qq.sales_id }}</td>
+                        <td>{{ qq.customer_name}}</td>
+                        <td>{{ qq.order_date }}</td>
+                        <td>{{ qq.paid }}</td>
+                        <td>{{ qq.due }}</td>
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+{% endblock content %}

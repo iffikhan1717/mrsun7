@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-sm-12" align="center">
+            <h1>Detail Builty Report</h1>
+
+
+
+            <table class="table-responsive-sm table-bordered">
+                <thead>
+
+                <tr>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">stock_detail_id:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">product_name:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">puchase_price:</th>
+
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">retail_price</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">qty</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for ss in aa.stockdetail_set.all %}
+                    {#            {% for a in ss.salesdetails_set.all %}#}
+                    <tr>
+
+                        <td>{{ ss.stock_detail_id }}</td>
+                        <td>{{ ss.product_name }}</td>
+                        <td>{{ ss.puchase_price }}</td>
+                        <td>{{ ss.retail_price }}</td>
+                        <td>{{ ss.qty }}</td>
+
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+
+    </div><p></p>
+
+
+{% endblock content %}

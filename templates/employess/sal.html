@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1  align="center">Pay Salaries to Employes </h1><p>
+    <form id='salform' onsubmit="return false">
+
+        <table class="table-responsive-sm table-bordered mx-auto table-info">
+            <thead>
+            <tr>
+
+                <th style="text-align:center;">Salary Amount:</th>
+                <th style="text-align:center;">Employee Name:</th>
+                <th style="text-align:center;">Paying Method:</th>
+                <th style="text-align:center;">Description</th>
+                <th style="text-align:center;">Date</th>
+
+            </thead>
+            <tbody>
+            <tr>
+
+
+                <td>
+                    <input name="amount" type="text" class="form-control form-control-sm tqty">
+
+                </td>
+                <td>
+                    <input type="text" name="comn" list="company" class="form-control form-sm"/>
+                    <datalist id="company">
+                        {% for p in acc %}
+                            <option value="{{ p.employees_name }}">{{ p.employees_name }}</option>
+                        {% endfor %}
+                    </datalist>
+
+
+                </td>
+                <td><input name="method" type="text" class="form-control form-control-sm tqty"></td>
+                <td><input name="des" type="text" class="form-control form-control-sm tqty"></td>
+                <td><input name="dt" type="text" class="form-control form-control-sm qty"></td>
+
+
+            </tr>
+
+
+            </tbody>
+
+        </table> <!--Table Ends-->
+        <center style="padding:10px;">
+
+            <button id="sal" style="width:150px;" class="btn btn-primary">Submit</button>
+        </center>
+    </form>
+
+
+
+
+{% endblock %}

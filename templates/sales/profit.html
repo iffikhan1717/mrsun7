@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-sm-12" align="center">
+            <h1>Stock Expens List</h1>
+
+
+            <table class="table-responsive-sm table-bordered">
+                <thead>
+
+                <tr>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">pro_id:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">sal_id:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">p_name:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">p_pp:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">p_rp:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">saled_price</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">qty</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">profit_s_piece</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">total</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for s in ss %}
+                    {#            {% for a in ss.salesdetails_set.all %}#}
+                    <tr>
+
+                        <td>{{ s.pro_id }}</td>
+                        <td>{{ s.sal_id }}</td>
+                        <td>{{ s.p_name }}</td>
+                        <td>{{ s.p_pp }}</td>
+                        <td>{{ s.p_rp }}</td>
+                        <td>{{ s.saled_price }}</td>
+                        <td>{{ s.qty }}</td>
+                        <td>{{ s.profit }}</td>
+                        <td>{{ s.total }}</td>
+
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+            <h4>{{ t }}</h4>
+
+        </div>
+
+
+    </div><p></p>
+
+
+{% endblock content %}

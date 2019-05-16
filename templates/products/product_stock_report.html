@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+    <div class="col-md-12 mx-auto">
+        <h4 align="center">Stock Report
+        <button  onClick="scrollSmoothToBottom()">Bottom</button>
+        </h4>
+        <h4 align="center">Total Pro: {{ tp }}     &nbsp;</h4>
+{#Total Inv Amt: {{ amt }}#}
+
+
+
+        <table class="table-responsive-sm table-bordered mx-auto" >
+
+        <p></p>
+    <thead>
+
+      <tr>
+        <th style="text-align:center;">#</th>
+        <th style="text-align:center;">Pro Name </th>
+
+        <th style="text-align:center;">Qty</th>
+        <th style="text-align:center;">P.Price</th>
+        <th style="text-align:center;">R.Price</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for all in allstock %}
+      <tr>
+
+        <td>{{ forloop.counter}}</td>
+        <td class="text-center">{{ all.name}}</td>
+{#        <td class="text-center">{{ all.company_company }}</td>#}
+        <td>{{ all.qty }}</td>
+        <td>{{ all.p_p }}</td>
+        <td>{{ all.r_p }}</td>
+      </tr>
+        {% endfor %}
+
+    </tbody>
+
+  </table>
+
+    <h5 align="center"><button onClick="scrollSmoothToTop()">Top</button>
+ </h5>
+{#Total Profit: {{ r }} #}
+    </div>
+
+    </div>
+
+<script>
+
+scrollingElement = (document.scrollingElement || document.body)
+function scrollToBottom () {
+   scrollingElement.scrollTop = scrollingElement.scrollHeight;
+}
+
+function scrollToTop (id) {
+   scrollingElement.scrollTop = 0;
+}
+
+//Require jQuery
+function scrollSmoothToBottom (id) {
+   $(scrollingElement).animate({
+      scrollTop: document.body.scrollHeight
+   }, 500);
+}
+
+//Require jQuery
+function scrollSmoothToTop (id) {
+   $(scrollingElement).animate({
+      scrollTop: 0
+   }, 500);
+}
+
+
+
+
+
+</script>
+
+
+
+
+{% endblock content %}

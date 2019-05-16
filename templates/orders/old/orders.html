@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <div class="card" style="box-shadow:0 0 25px 0 lightgrey;">
+                <div class="card-header">
+                    <h4>New Orders</h4>
+                </div>
+                <div class="card-body">
+                    <form id="get_order_data" onsubmit="return false">
+
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" align="right">Customer Name*</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="cust" list="customers" class="form-sm cst"/>
+                                <datalist id="customers">
+                                    {% for c in all_cust %}
+                                        <option class="" value="{{ c.cust_name }}">{{ c.cust_name }}</option>&nbsp;
+                                        &nbsp;
+                                    {% endfor %}
+                                </datalist>&nbsp;
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="col-sm-12" style="box-shadow:0 0 15px 0 lightgrey;">
+                            <div class="card-body">
+                                <h3>Make a order list</h3>
+                                <table align="center">
+                                    <thead>
+                                    <tr style="font-size: 20px;">
+                                        <th>#</th>
+                                        <th style="text-align:center;">Product Name</th>
+
+                                        <th style="text-align:center;">Total Quantity</th>
+                                        <th style="text-align:center;">Price</th>
+                                        <th style="text-align:center;">Ecode</th>
+                                        <th style="text-align:center;">Quantity</th>
+                                        <th style="text-align:center;">Discount</th>
+
+                                        <th>Total</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="invoice_item">
+                                    {% include 'orders/old/orders_2nd.html' with com=c.products_set.all %}
+
+                                    </tbody>
+                                </table> <!--Table Ends-->
+                                <center style="padding:10px;">
+                                    <button id="add" style="width:150px;" class="btn btn-success">Add</button>
+                                    <button id="remove" style="width:150px;" class="btn btn-danger">Remove</button>
+                                </center>
+                            </div> <!--Crad Body Ends-->
+                        </div> <!-- Order List Crad Ends-->
+
+                        <p></p>
+
+
+                        <div class="form-group row">
+                            <label for="net_total" class="col-sm-3 col-form-label" align="right">Net Total</label>
+                            <div class="col-sm-6">
+                                <input size="4" style="font-size: 20px;" type="text" readonly name="net_total"
+                                       class="form-control form-control-sm"
+                                       id="net_total" required/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="paid" class="col-sm-3 col-form-label" align="right">Paid</label>
+                            <div class="col-sm-6">
+                                <input size="4" style="font-size: 20px;" type="text" name="paid"
+                                       class="form-control form-control-sm" id="paid" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="due" class="col-sm-3 col-form-label" align="right">Due</label>
+                            <div class="col-sm-6">
+                                <input size="4" style="font-size: 20px;" type="text" readonly name="due"
+                                       class="form-control form-control-sm" id="due"
+                                />
+                            </div>
+                        </div>
+
+
+                        <center>
+                            <input type="submit" id="order_form" style="width:150px;" class="btn btn-info"
+                                   value="Order">
+                            <input type="submit" id="order_formreturn" style="width:150px;" class="btn btn-info"
+                                   value="Return">
+
+                        </center>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

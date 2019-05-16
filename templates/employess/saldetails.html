@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h3 align="center">History of Salary Payments To Employees</h3>
+        <table align="center" class="table-responsive-sm table-bordered mx-auto">
+    <thead>
+      <tr>
+        <th>Ser</th>
+
+        <th style="text-align:center;">Employee Name:</th>
+
+                <th style="text-align:center;">Salary Amount:</th>
+                <th style="text-align:center;">Method:</th>
+                <th style="text-align:center;">Description</th>
+                <th style="text-align:center;">Date</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for c in leg %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+
+    <td>{{ c.emp_name}}</td>
+
+      <td>{{ c.amount}}</td>
+      <td>{{ c.method}}</td>
+      <td>{{ c.desc}}</td>
+    <td>{{ c.dat}}</td>
+
+
+
+
+
+  </tr>
+{% empty %}
+  <tr>
+    <td colspan="7" class="text-center bg-warning">No Salary Given</td>
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+{#    <h5 align="center">Total Expense: {{ total }}</h5>#}
+    </div>
+</div>
+
+
+{% endblock content %}
+
+

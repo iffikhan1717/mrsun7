@@ -1,0 +1,25 @@
+<tr>
+    <td><b class="number">1</b></td>
+
+
+    <td>
+
+        <input type="text" name="pro"  list="ProductName"
+                                       class=" form-control form-control-sm pid"/>
+                                <datalist id="ProductName">
+                                    {% for c in all_pus %}
+                                        <option  value="{{ c.products_name }}">{{ c.products_name}}</option>
+                                    {% endfor %}
+                                </datalist>
+    </td>
+    <td><input name="pprice" type="text" class="form-control form-control-sm tqty"></td>
+    <td><input name="rprice" type="text" class="form-control form-control-sm qty"></td>
+
+
+    <td><input name="qty" type="text" class="form-control form-control-sm qty"></td>
+
+    <td><input name="unit" type="text" class="form-control form-control-sm qty" required></td>
+    <td><input name="bxv" type="text" class="form-control form-control-sm qty" required></td>
+
+
+</tr>

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-sm-12" align="center">
+            <h1>Todays Sales Report</h1>
+
+                <h5>
+                    Todays Sale On Cash: {{ todayssale }}&nbsp;&nbsp;
+                    Todays Sale On Due: {{ todaysdue }}&nbsp;&nbsp;
+                    Todays Shop Expenses: {{ exp }}&nbsp;&nbsp;
+                    &nbsp;
+                </h5>
+                <h5>Total Sale: {{ totalsale }}&nbsp;</h5>
+                <h5>Todays Profit: {{ profit }}&nbsp;</h5>
+            <table class="table-responsive-sm table-bordered">
+                <thead>
+
+                <tr>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Sale id:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Customer Name:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Sales Date:</th>
+
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">NetTotal</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Total Paid</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Due</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for ss in s %}
+                    {#            {% for a in ss.salesdetails_set.all %}#}
+                    <tr>
+
+                        <td>{{ ss.sales_id }}</td>
+                        <td>{{ ss.cust_name }}</td>
+                        <td>{{ ss.dat }}</td>
+
+
+                        <td>Rs: {{ ss.net_total }}</td>
+                        <td>Rs: {{ ss.paid }}</td>
+                        <td>Rs: {{ ss.due }}</td>
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+
+    </div><p></p>
+
+
+{% endblock content %}

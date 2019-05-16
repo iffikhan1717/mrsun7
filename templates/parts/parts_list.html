@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-12 mx-auto">
+        <h3 align="center">Part Details</h3>
+
+        <table class="table table-responsive-sm table-bordered mx-auto">
+    <thead>
+
+      <tr>
+        <th>Serial</th>
+        <th style="text-align:center;">Item Name</th>
+        <th style="text-align:center;">Qty</th>
+
+
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for ss in p %}
+      <tr>
+        <td class="text-center">{{ forloop.counter }}</td>
+        <td class="text-center">{{ ss.name}}</td>
+        <td class="text-center">{{ ss.qty }}</td>
+
+      </tr>
+        {% endfor %}
+
+    </tbody>
+  </table>
+    </div>
+    </div>
+

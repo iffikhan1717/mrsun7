@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-sm-12" align="center">
+            <h1>Stock Expens List</h1>
+
+
+            <table class="table-responsive-sm table-bordered">
+                <thead>
+
+                <tr>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Ser No:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Name:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Entry Date:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Builty No:</th>
+                    <th style="text-align:center; color:white;" bgcolor="#8a2be2">Amout</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for s in ss %}
+                    {#            {% for a in ss.salesdetails_set.all %}#}
+                    <tr>
+
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ s.name }}</td>
+                        <td>{{ s.dat }}</td>
+                        <td>{{ s.builtyno }}</td>
+                        <td>{{ s.amt }}</td>
+
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+
+    </div><p></p>
+
+
+{% endblock content %}

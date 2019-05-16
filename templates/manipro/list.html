@@ -1,0 +1,36 @@
+<p></p>
+<div class="row">
+    <div class="offset-1 col-md-10 ">
+        <h3 align="center">List of Products Manufactured In Factory</h3>
+
+        <table class="table table-responsive-sm table-bordered mx-auto">
+    <thead>
+
+      <tr>
+        <th>Serial</th>
+        <th style="text-align:center;">Item Name</th>
+        <th style="text-align:center;">Qty</th>
+        <th style="text-align:center;">Date</th>
+
+
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for ss in p %}
+      <tr>
+        <td class="text-center">{{ forloop.counter }}</td>
+        <td class="text-center">{{ ss.name}}</td>
+        <td class="text-center">{{ ss.qty }}</td>
+        <td class="text-center">{{ ss.dat }}</td>
+
+      </tr>
+        {% endfor %}
+
+    </tbody>
+  </table>
+    </div>
+    </div>
+
